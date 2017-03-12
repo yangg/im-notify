@@ -1,0 +1,56 @@
+
+.notify-container
+  position: fixed
+  z-index: 1001
+  // right: 0
+  top: 1em
+  left: 1em
+  max-height: 100%
+  overflow-y: auto
+  font-size: 14px
+  line-height: 1.43
+  &--tc
+    left: 50%
+    transform: translateX(-50%)
+  &--tr
+    left: auto
+    right: 1em
+
+
+  .notification
+    color: #fff
+    min-width: 160px
+    max-width: 310px
+    border-radius: 4px
+    padding: 0 15px
+    // font-size: 1.1em
+    transition: .5s
+    opacity: 0.2
+    max-height: 0
+    box-sizing: content-box
+    margin-bottom: 1em
+    overflow: hidden
+    display: flex
+    &--opened
+      max-height: 999px
+      opacity: 1
+      padding-top: 10px
+      padding-bottom: 10px
+    
+    &__body
+      flex: 1
+    &__icon
+      fill: currentColor
+      display: inline-block
+      vertical-align: top
+      margin-right: .45em
+      height: 1.43em
+    // notification type
+    &--success
+      background-color: #13ce66
+    &--info
+      background-color: #50bfff
+    &--warning
+      background-color: #f90
+    &--error
+      background-color: #ff4949

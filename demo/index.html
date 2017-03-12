@@ -1,0 +1,30 @@
+<!doctype html>
+<html lang="zh-Hans">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title></title>
+  <% for (var css in htmlWebpackPlugin.files.css) { %>
+  <link href="<%= htmlWebpackPlugin.files.css[css] %>" rel="stylesheet">
+  <% } %>
+</head>
+<body>
+  <div id="root" style="margin-top:30%" >
+    <button v-on:click="toggleNotify">Toggle</button>
+    <button v-on:click="showNotify('success')">success</button>
+    <button v-on:click="showNotify('error')">Error</button>
+    <button v-on:click="showNotify('info')">info</button>
+    <button v-on:click="showNotify('warning')">warning</button>
+  </div>
+  <style>.unsupported-browser { display: none; }</style>
+  <div class="unsupported-browser">
+    Sorry, your browser is not supported.  Please upgrade to
+    the latest version or switch your browser to use this site.
+    See <a href="http://outdatedbrowser.com/">outdatedbrowser.com</a>
+    for options.
+  </div>
+  <% for (var chunk in htmlWebpackPlugin.files.chunks) { %>
+  <script src="<%= htmlWebpackPlugin.files.chunks[chunk].entry %>"></script>
+  <% } %>
+</body>
+</html>
