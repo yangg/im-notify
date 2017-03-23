@@ -1,6 +1,5 @@
 
 import Icon from './icon'
-// exclamation info-circle times
 
 const defaultConfig = {
   type: 'error',
@@ -30,7 +29,7 @@ class Notification {
   }
   close () {
     this.notification.classList.remove('notification--opened')
-    // setTimeout(() => this.notification.parentNode.removeChild(this.notification), 500)
+    setTimeout(() => this.notification.parentNode.removeChild(this.notification), 500)
   }
   init () {
     this.getContainer()
@@ -44,7 +43,7 @@ class Notification {
 
     this.notification = notification
     if (this.timeout) {
-      // setTimeout(() => this.close(), this.timeout * 1000)
+      setTimeout(() => this.close(), this.timeout * 1000)
     }
   }
 }
@@ -62,36 +61,3 @@ const notify = (msg, type = defaultConfig.type, timeout = defaultConfig.timeout,
 
 export default notify
 
-// class Notification extends React.Component {
-//   constructor () {
-//     super(...arguments)
-//     this.state = {
-//       destoried: false,
-//       opened: false
-//     }
-//   }
-//   static defaultProps = {
-//     timeout: 2000,
-//     type: 'error'
-//   }
-//   close () {
-//     this.setState({ opened: false })
-//     setTimeout(() => this.setState({ destoried: true }), 300)
-//   }
-//   componentDidMount () {
-//     setTimeout(() => this.setState({ opened: true }), 0)
-//     this.props.timeout && setTimeout(() => this.close(), this.props.timeout)
-//   }
-//   render () {
-//     const notifyCls = classNames(
-//       'notification notification--' + this.props.type,
-//       { 'notification--opened': this.state.opened }
-//     )
-//     if (this.state.destoried) {
-//       return null
-//     }
-//     return (
-//       <div className={notifyCls}>{this.props.msg}</div>
-//     )
-//   }
-// }

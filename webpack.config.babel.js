@@ -3,21 +3,23 @@ import HtmlWebpackPlugin from 'html-webpack-plugin'
 
 export default {
   entry: {
-    demo: './demo/index.js',
-    index: './app/index.js'
+    demo: './demo/index.js'
   },
   output: {
     filename: '[name].js',
     path: path.resolve(__dirname, 'dist')
   },
   module: {
-    rules: [ {
-      test: /\.js$/,
-      use: [ 'babel-loader' ]
-    }, {
-      test: /\.styl$/,
-      use: [ 'style-loader', 'css-loader', 'stylus-loader' ]
-    } ]
+    rules: [
+    //   {
+    //   test: /\.js$/,
+    //   exclude: /node_modules/,
+    //   use: [ 'babel-loader' ]
+    // },
+      {
+        test: /\.styl$/,
+        use: [ 'style-loader', 'css-loader', 'stylus-loader' ]
+      } ]
   },
   resolve: {
     alias: {
