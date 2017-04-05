@@ -9,12 +9,13 @@
   <% } %>
 </head>
 <body>
-  <div id="root" style="margin-top:30%" >
-    <button v-on:click="toggleNotify">Toggle</button>
-    <button v-on:click="showNotify('success')">success</button>
-    <button v-on:click="showNotify('error')">Error</button>
-    <button v-on:click="showNotify('info')">info</button>
-    <button v-on:click="showNotify('warning')">warning</button>
+  <div id="root" >
+    <p>
+      <button v-on:click="showNotify('success')">Success</button>
+      <button v-on:click="showNotify('error')">Error</button>
+      <button v-on:click="showNotify('info')">Info</button>
+      <button v-on:click="showNotify('warning')">Warning</button>
+    </p>
   </div>
   <style>.unsupported-browser { display: none; }</style>
   <div class="unsupported-browser">

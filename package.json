@@ -3,13 +3,17 @@
   "version": "1.0.5",
   "description": "Display notifications to your app",
   "main": "dist/index.js",
+  "browser": "dist/notify-browser.js",
   "files": [
-    "dist/index.js",
-    "app/"
+    "dist/notify-browser.js",
+    "lib/",
+    "README.md"
   ],
   "scripts": {
     "start": "webpack-dev-server --hot",
-    "build": "webpack",
+    "build": "npm run build-main && npm run build-browser",
+    "build-browser": "rollup --config rollup.config.js  --format iife --name msgNotify --output dist/notify-browser.js",
+    "build-main": "rollup --config rollup.config.js  --format cjs --output dist/index.js",
     "prepublish": "npm run build",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -34,10 +38,10 @@
   "dependencies": {},
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/yangg/im-notify.git"
+    "url": "git+https://github.com/yangg/msg-notify.git"
   },
   "bugs": {
-    "url": "https://github.com/yangg/im-notify/issues"
+    "url": "https://github.com/yangg/msg-notify/issues"
   },
-  "homepage": "https://github.com/yangg/im-notify#readme"
+  "homepage": "https://github.com/yangg/msg-notify#readme"
 }

@@ -3,7 +3,7 @@ import './demo.styl'
 
 import Vue from 'vue'
 
-import notify from '../app'
+import notify from '../dist/'
 
 // eslint-disable-next-line
 const app = new Vue({
@@ -12,13 +12,6 @@ const app = new Vue({
     notify: null
   },
   methods: {
-    toggleNotify: () => {
-      if (this.notify) {
-        this.notify[this.notify.notification.classList.contains('notification--opened') ? 'close' : 'open']()
-      } else {
-        this.notify = notify('保存成功', 'success')
-      }
-    },
     showNotify: (type) => {
       const msg = {
         success: '保存成功',
@@ -33,5 +26,3 @@ const app = new Vue({
     }
   }
 })
-
-app.toggleNotify()

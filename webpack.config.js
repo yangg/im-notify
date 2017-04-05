@@ -1,7 +1,7 @@
-import path from 'path'
-import HtmlWebpackPlugin from 'html-webpack-plugin'
+const path = require('path')
+const HtmlWebpackPlugin = require('html-webpack-plugin')
 
-export default {
+module.exports = {
   entry: {
     demo: './demo/index.js'
   },
@@ -30,7 +30,8 @@ export default {
     new HtmlWebpackPlugin({
       inject: false,
       chunks: ['demo'],
-      template: 'demo/index.html'
+      template: 'demo/index.html',
+      filename: 'demo.html'
     })
   ]
 }
