@@ -1,0 +1,29 @@
+<!doctype html>
+<html lang="zh-Hans">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title></title>
+  
+</head>
+<body>
+  <div id="root" >
+    <p>
+      <button v-on:click="showNotify('success')">Success</button>
+      <button v-on:click="showNotify('error')">Error</button>
+      <button v-on:click="showNotify('info')">Info</button>
+      <button v-on:click="showNotify('warning')">Warning</button>
+    </p>
+  </div>
+  <style>.unsupported-browser { display: none; }</style>
+  <div class="unsupported-browser">
+    Sorry, your browser is not supported.  Please upgrade to
+    the latest version or switch your browser to use this site.
+    See <a href="http://outdatedbrowser.com/">outdatedbrowser.com</a>
+    for options.
+  </div>
+  
+  <script src="demo.js"></script>
+  
+</body>
+</html>

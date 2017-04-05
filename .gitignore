@@ -1,2 +1,4 @@
-dist/
+dist/*
+!dist/demo.html
+!dist/demo.js
 node_modules/
