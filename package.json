@@ -12,6 +12,7 @@
   ],
   "scripts": {
     "start": "webpack-dev-server --hot",
+    "build-demo": "webpack",
     "build": "npm run build-main && npm run build-browser && npm run build-style",
     "build-main": "rollup --config rollup.config.js  --format cjs --output dist/index.js",
     "build-browser": "rollup --config rollup.config.js  --format iife --name msgNotify --output dist/notify-browser.js",

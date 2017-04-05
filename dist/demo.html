@@ -8,12 +8,22 @@
 </head>
 <body>
   <div id="root" >
-    <p>
-      <button v-on:click="showNotify('success')">Success</button>
-      <button v-on:click="showNotify('error')">Error</button>
-      <button v-on:click="showNotify('info')">Info</button>
-      <button v-on:click="showNotify('warning')">Warning</button>
-    </p>
+    <section>
+      <p>
+        <button v-on:click="showNotify('success')">Success</button>
+        <button v-on:click="showNotify('error')">Error</button>
+        <button v-on:click="showNotify('info')">Info</button>
+        <button v-on:click="showNotify('warning')">Warning</button>
+      </p>
+      <div class="code-block">
+        <p>Usage: </p>
+        <pre><code>// import 'msg-notify/dist/notify.css' // import style first
+import notify from 'msg-notify'
+
+notify('notification msg', 'success')
+notify('error msg', 'error')</code></pre>
+        </div>
+    </section>
   </div>
   <style>.unsupported-browser { display: none; }</style>
   <div class="unsupported-browser">

@@ -2,8 +2,9 @@ const path = require('path')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
 
 module.exports = {
+  context: path.resolve(__dirname, 'demo'),
   entry: {
-    demo: './demo/index.js'
+    demo: './index.js'
   },
   output: {
     filename: '[name].js',
@@ -30,7 +31,7 @@ module.exports = {
     new HtmlWebpackPlugin({
       inject: false,
       chunks: ['demo'],
-      template: 'demo/index.html',
+      template: 'index.html',
       filename: 'demo.html'
     })
   ]

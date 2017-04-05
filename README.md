@@ -6,7 +6,7 @@ Display notifications to your app
 
 [Online Demo](https://yangg.github.io/msg-notify/dist/demo.html)
 
-![msg-notify](https://cloud.githubusercontent.com/assets/409225/24689787/954531c8-19fb-11e7-92e0-28f0879e57da.gif)
+[![msg-notify](https://cloud.githubusercontent.com/assets/409225/24689787/954531c8-19fb-11e7-92e0-28f0879e57da.gif)](https://yangg.github.io/msg-notify/dist/demo.html)
 
 ## Installation
 ```bash
@@ -16,6 +16,7 @@ npm install --save msg-notify
 ## Usage
 First import `msg-notify/lib/notify.styl` or `msg-notify/dist/notify.css`, then
 ```js
+// import 'msg-notify/dist/notify.css' // import style first
 import notify from 'msg-notify'
 
 notify('notification msg', 'success')
